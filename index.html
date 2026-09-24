@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Desafío IA · Feria de Primavera</title>
+  <meta name="description" content="Elegí tu carrera y respondé 5 preguntas sobre Inteligencia Artificial.">
+  <meta name="theme-color" content="#FFF6EC">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌸</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@500;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="petals" aria-hidden="true"></div>
+
+  <button class="icon-btn fullscreen-btn" id="fullscreenBtn" aria-label="Pantalla completa" title="Pantalla completa">⛶</button>
+  <button class="icon-btn sound-btn" id="soundBtn" aria-label="Sonido" title="Sonido">🔊</button>
+
+  <!-- Pantalla 1: elegir carrera -->
+  <main class="screen active" id="screen-home">
+    <header class="hero">
+      <span class="badge">🌸 Feria de Primavera</span>
+      <h1>Desafío <span class="grad">IA</span></h1>
+      <p class="lead">Elegí tu carrera y respondé <strong>5 preguntas</strong>.<br>¡Si acertás todas, te llevás un premio!</p>
+    </header>
+    <div class="careers" id="careers"></div>
+  </main>
+
+  <!-- Pantalla 2: preguntas -->
+  <main class="screen" id="screen-quiz">
+    <div class="quiz-top">
+      <button class="link-btn" id="quitBtn">← Salir</button>
+      <span class="chip" id="quizChip"></span>
+      <div class="dots" id="dots"></div>
+    </div>
+    <section class="card question-card" id="questionCard">
+      <p class="q-count" id="qCount"></p>
+      <h2 class="q-text" id="qText"></h2>
+      <div class="options" id="options"></div>
+      <p class="feedback" id="feedback" aria-live="polite"></p>
+    </section>
+  </main>
+
+  <!-- Pantalla 3: resultado -->
+  <main class="screen" id="screen-result">
+    <section class="card result-card" id="resultCard">
+      <div class="result-emoji" id="resultEmoji"></div>
+      <h2 class="result-title" id="resultTitle"></h2>
+      <p class="result-score" id="resultScore"></p>
+      <div class="result-dots" id="resultDots"></div>
+      <p class="result-msg" id="resultMsg"></p>
+      <div class="prize" id="prize">
+        <span>🎁 ¡Reclamá tu premio!</span>
+        <small>Mostrale esta pantalla a alguien del stand</small>
+      </div>
+      <button class="btn-primary" id="againBtn">Jugar de nuevo</button>
+      <p class="auto-return" id="autoReturn"></p>
+    </section>
+  </main>
+
+  <canvas id="confetti" aria-hidden="true"></canvas>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
